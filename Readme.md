@@ -37,6 +37,16 @@ You can create a customer account using either the teller or registration proces
 
 1. Make a POST request to `/api/Customer/Register` to register a customer account. This is available for self-registration.
 
+## Opening Bank Account Using a Teller Account
+
+To open a customer account using a teller account, follow these steps:
+
+1. Log in as a teller to obtain an authentication token.
+
+2. Make a POST request to `/api/Teller/AddCustomer` to create a customer (Skip this step if customer is already exist).
+   
+3. Make a POST request to `/api/Teller/OpenAccount` to open account with customerId.
+
 ## Account Types
 
 You can create various types of accounts, such as Savings, Checking, etc., after customer registration.
@@ -47,7 +57,7 @@ Teller accounts have the following actions available:
 
 - Deposit
 - AddCustomer
-- OpenAccount
+- OpenAccount (Savings, Checking, etc.)
 - TransferMoney
 - WithdrawCash
 - BalanceInquiry
